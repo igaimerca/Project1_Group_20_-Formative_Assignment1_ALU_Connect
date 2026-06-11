@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>ALU Connect Report</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">ALU Connect Report</h1>
+</header>
+<h1 id="alu-connect-formative-assignment-1-technical-report">ALU Connect
+— Formative Assignment 1 Technical Report</h1>
+<p><strong>Group:</strong> ALU Connect Team (Aime, Aurele, Emmanuel,
+Shakira)<br />
+<strong>Course:</strong> Mobile Application Development<br />
+<strong>Submission file:</strong>
+<code>ALU_Connect_Formative_Assignment1.pdf</code></p>
+<hr />
+<h2 id="introduction-product-vision">1. Introduction &amp; Product
+Vision</h2>
+<h3 id="overview">1.1 Overview</h3>
+<p>ALU Connect is a Flutter mobile application built for the African
+Leadership University (ALU) community. It addresses fragmented campus
+communication by giving students one place to discover events,
+internships, clubs, and leadership opportunities across Kigali,
+Mauritius, and the Virtual Hub. The app supports onboarding,
+authentication, a personalized home feed, exploration with campus
+filters, RSVP workflows, role-gated content creation, community chats,
+and a profile hub for posts, saved items, and support.</p>
+<p>Our goal was not to copy sample layouts, but to design a product that
+feels native to ALU: multi-campus, leadership-oriented, and socially
+engaging while remaining technically credible for a formative mobile
+assignment.</p>
+<h3 id="fit-with-alu-culture-context">1.2 Fit with ALU Culture &amp;
+Context</h3>
+<ul>
+<li><strong>Multi-campus discovery</strong> — Students filter by Kigali,
+Mauritius, Virtual Hub, or view all campuses from a prominent Explore
+selector.</li>
+<li><strong>Cohort social proof</strong> — Event detail shows how many
+peers from the user’s cohort are attending, encouraging
+participation.</li>
+<li><strong>Role-gated publishing</strong> — Only organizers (SSO /
+approved emails) can create posts; students engage via RSVP, save, and
+chat. This mirrors real campus permission models.</li>
+<li><strong>Pan-African content</strong> — Mock data uses ALU-relevant
+workshops, hackathons, internships, and Rwandan community names.</li>
+<li><strong>Community over isolation</strong> — Group and peer chat
+threads tie to clubs and events, not anonymous feeds alone.</li>
+</ul>
+<h3 id="engaging-unique-features">1.3 Engaging &amp; Unique
+Features</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 66%" />
+</colgroup>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Why it engages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Featured events carousel</td>
+<td>Visual, swipeable highlights on Home</td>
+</tr>
+<tr>
+<td>Category chips (All / Events / Opportunities / Clubs)</td>
+<td>Home content adapts to what the user wants</td>
+</tr>
+<tr>
+<td>Campus explore cards with counts</td>
+<td>Makes cross-campus discovery obvious</td>
+</tr>
+<tr>
+<td>RSVP Going / Interested</td>
+<td>Low-friction commitment with persisted state</td>
+</tr>
+<tr>
+<td>Cover image upload on create</td>
+<td>Personal, visual posts from organizers</td>
+</tr>
+<tr>
+<td>Edit &amp; delete own posts</td>
+<td>Organizers manage content without admin tools</td>
+</tr>
+<tr>
+<td>Saved items + My Posts</td>
+<td>Personal library and publishing history</td>
+</tr>
+<tr>
+<td>Help &amp; Support sheet</td>
+<td>One-tap email (<code>support@aluconnect.com</code>) or phone</td>
+</tr>
+<tr>
+<td>Dark + gold UI</td>
+<td>Aligns with ALU branding; high contrast for readability</td>
+</tr>
+<tr>
+<td>Animations</td>
+<td>Splash, fade/slide transitions, staggered list items</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="design-rationale-implementation">2. Design Rationale &amp;
+Implementation</h2>
+<h3 id="uiux-redesign">2.1 UI/UX Redesign</h3>
+<p>We redesigned navigation and layout rather than cloning reference
+screens:</p>
+<ul>
+<li><strong>Bottom navigation (5 tabs)</strong> — Home, Explore, Create,
+Chats, Profile keeps primary actions one tap away.</li>
+<li><strong>Explore as hub</strong> — Discover, My RSVPs, and Clubs live
+in one tab with sub-tabs, reducing stack depth.</li>
+<li><strong>Home category filtering</strong> — Selecting Events shows
+only upcoming events; Opportunities shows internships/fellowships; All
+shows featured + sections.</li>
+<li><strong>Campus selector at top of Explore</strong> — Replaced a
+hidden bottom-of-list pattern with horizontal cards and an active-filter
+banner.</li>
+<li><strong>Empty states</strong> — Every major list guides the user
+(e.g. “Explore events”, “Create a post”) instead of blank screens.</li>
+<li><strong>Custom date/time widget</strong> — Native pickers for
+create/edit; consistent display on cards and detail screens.</li>
+</ul>
+<p><strong>Typography &amp; color:</strong> Background
+<code>#0B111D</code>, gold accent <code>#F9B83E</code> from the ALU
+logo, Inter via Google Fonts. Touch targets ≥ 48dp on primary
+buttons.</p>
+<h3 id="navigation-state-handling">2.2 Navigation &amp; State
+Handling</h3>
+<ul>
+<li><strong>Provider (<code>ChangeNotifier</code>)</strong> —
+<code>AuthProvider</code>, <code>FeedProvider</code>,
+<code>ClubProvider</code>, <code>ChatProvider</code>,
+<code>NavigationProvider</code>.</li>
+<li><strong>Main shell</strong> — <code>AnimatedSwitcher</code> on tab
+index; filters and scroll positions held in providers.</li>
+<li><strong>Detail routes</strong> — <code>FadeSlideRoute</code> for
+event detail, edit post, saved, notifications.</li>
+<li><strong>SQLite (<code>sqflite</code>)</strong> — Feed items, RSVPs,
+clubs, chat threads/messages, saved IDs; survives app restart.</li>
+<li><strong>SharedPreferences</strong> — Onboarding complete, login
+session, user profile JSON.</li>
+<li><strong>Atomic updates</strong> — RSVP changes update attendee
+count, SQLite, and UI in one <code>FeedProvider</code> method.</li>
+</ul>
+<pre><code>Onboarding → Login → MainShell
+  ├── Home (feed categories)
+  ├── Explore (Discover | RSVPs | Clubs + campus filter)
+  ├── Create (role-gated publish)
+  ├── Chats (threads + detail)
+  └── Profile (posts, saved, notifications, support)</code></pre>
+<h3 id="technical-architecture">2.3 Technical Architecture</h3>
+<pre><code>lib/
+├── core/           theme, constants, navigation transitions
+├── data/           models, mock seed, SQLite, preferences
+├── providers/      app state
+├── screens/        feature screens by domain
+└── widgets/        reusable cards, empty states, date/time, campus selector</code></pre>
+<p><strong>Key packages:</strong> <code>provider</code>,
+<code>sqflite</code>, <code>shared_preferences</code>,
+<code>google_fonts</code>, <code>image_picker</code>,
+<code>url_launcher</code>, <code>intl</code>, <code>uuid</code>.</p>
+<h3 id="major-product-decisions">2.4 Major Product Decisions</h3>
+<table>
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Justification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SQLite + SharedPreferences</td>
+<td>Structured persistence for feeds/chats; lightweight session
+flags</td>
+</tr>
+<tr>
+<td>Mock seed data</td>
+<td>No ALU API in scope; demonstrates full offline UX</td>
+</tr>
+<tr>
+<td><code>canPost</code> on profile</td>
+<td>Realistic organizer vs student roles for demos</td>
+</tr>
+<tr>
+<td>Edit/delete by <code>host</code> name</td>
+<td>Simple ownership model without backend auth</td>
+</tr>
+<tr>
+<td>Support email <code>support@aluconnect.com</code></td>
+<td>Branded, maintainable contact channel</td>
+</tr>
+</tbody>
+</table>
+<h3 id="error-handling">2.5 Error Handling</h3>
+<p>Login validation, form validation on publish (title ≥ 5, description
+≥ 20 chars), empty search with “Clear filters”, unauthorized create
+screen, sign-out confirmation, delete-post confirmation, compact empty
+states to avoid layout overflow.</p>
+<hr />
+<h2 id="challenges-team-references">3. Challenges, Team &amp;
+References</h2>
+<h3 id="challenges-solutions">3.1 Challenges &amp; Solutions</h3>
+<table>
+<colgroup>
+<col style="width: 52%" />
+<col style="width: 47%" />
+</colgroup>
+<thead>
+<tr>
+<th>Challenge</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>iOS <code>sqflite_darwin</code> build error</td>
+<td><code>flutter clean</code>, reinstall pods, static frameworks in
+Podfile</td>
+</tr>
+<tr>
+<td>Layout overflow on small tabs</td>
+<td>Scrollable, compact <code>EmptyState</code> with
+<code>LayoutBuilder</code></td>
+</tr>
+<tr>
+<td>Campus filter hard to find</td>
+<td>Moved to top of Explore with visual cards</td>
+</tr>
+<tr>
+<td>Date/time inconsistency</td>
+<td>Shared <code>AluDateTimePicker</code> and
+<code>AluDateTimeDisplay</code> widgets</td>
+</tr>
+<tr>
+<td>Image picker on iOS</td>
+<td>Native permissions in Info.plist; full restart after plugin add</td>
+</tr>
+<tr>
+<td>Post lifecycle</td>
+<td><code>updateFeedItem</code> / <code>deleteFeedItem</code> in SQLite
++ provider; edit screen reuses create form</td>
+</tr>
+</tbody>
+</table>
+<h3 id="team-contributions">3.2 Team &amp; Contributions</h3>
+<p><strong>Active members (4):</strong> Aime, Aurele, Emmanuel, Shakira
+— each with a dedicated Git branch (<code>aime</code>,
+<code>aurele</code>, <code>emmanuel</code>, <code>shakira</code>).
+Mildred is no longer on the team; her tasks were redistributed (see
+<code>TEAM_CONTRIBUTIONS.md</code>).</p>
+<p><strong>Contribution tracker:</strong> [ADD GOOGLE SHEET LINK — copy
+course template]</p>
+<p><strong>GitHub repository:</strong> [ADD REPO URL]</p>
+<h3 id="demo-video-alignment-1015-min">3.3 Demo Video Alignment (10–15
+min)</h3>
+<p>The demo should run on <strong>iOS Simulator or physical
+device</strong> (not browser-only). Cover: onboarding, SSO login, home
+categories, explore + campus filter, RSVP, create post with image,
+edit/delete from My Posts, chats, profile (saved, notifications, help
+sheet), app restart to prove SQLite/SharedPreferences, and a short code
+walkthrough (one provider + database helper).</p>
+<p>See <code>docs/DEMO_VIDEO_SCRIPT.md</code> for a timed script.</p>
+<h3 id="future-work">3.4 Future Work</h3>
+<p>Real ALU SSO, push notifications, backend API, comment threads on
+posts, analytics for organizers.</p>
+<h3 id="references">3.5 References</h3>
+<p>African Leadership University. (n.d.). <em>About ALU</em>.
+https://alueducation.com</p>
+<p>Google. (n.d.). <em>Flutter documentation</em>.
+https://docs.flutter.dev</p>
+<p>Material Design. (n.d.). <em>Accessibility</em>.
+https://m3.material.io</p>
+<p>Provider package. (n.d.). https://pub.dev/packages/provider</p>
+<p>SQLite / sqflite. (n.d.). https://pub.dev/packages/sqflite</p>
+<p>Shared preferences. (n.d.).
+https://pub.dev/packages/shared_preferences</p>
+<hr />
+<p><em>Export this document to PDF (≤ 3 pages) as
+<code>ALU_Connect_Formative_Assignment1.pdf</code> — use Print to PDF or
+Pandoc with tight margins.</em></p>
+</body>
+</html>
