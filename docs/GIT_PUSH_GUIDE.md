@@ -57,15 +57,22 @@ git push -u origin aime
 
 ## 1.5 Push project config (pubspec, platforms, assets, docs)
 
-Still on branch `aime`. Run this **second commit** with everything needed to build the app:
+Still on branch `aime`. Run this **second commit**:
 
 ```bash
+git checkout aime
 git add pubspec.yaml pubspec.lock analysis_options.yaml .gitignore .metadata android/ ios/ linux/ macos/ windows/ web/ assets/ test/ docs/
 git commit -m "chore: add Flutter project config, platforms, assets, and team docs"
 git push origin aime
 ```
 
-> `ios/Pods/` and `build/` are gitignored — do not add them.
+> **Important:** run this on branch `aime`, NOT on `main`.  
+> If `pubspec.yaml` is missing, restore it:  
+> `git checkout 7711c8b -- pubspec.yaml pubspec.lock android/ ios/ ...`  
+> (or ask Aime — chore commit is already on `origin/aime` now)
+
+> Never run `git init` again — it destroys history.  
+> Never `git add` on `main` except README.
 
 ## 1.6 Tell the team
 
